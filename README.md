@@ -27,18 +27,20 @@ pip3 install -U gensim
 ```
 
 * 環境
+```
 Windows8 Jupyter notebook
+```
 
 ## 流程
 
-1.取得資料集，我這裡所採用的是愛評網的一部分食記內容(comment.txt)，若有其他需求，請自行爬蟲維基文章或任何大量文本資料來訓練
+1. 取得資料集，我這裡所採用的是愛評網的一部分食記內容(comment.txt)，若有其他需求，請自行爬蟲維基文章或任何大量文本資料來訓練
 
-2.因為`jieba`斷詞後的結果不一定符合我們的預期，所以可以建立`userdict`使用者自訂字典以及`stopwords`停用詞字典
+2. 因為`jieba`斷詞後的結果不一定符合我們的預期，所以可以建立`userdict`使用者自訂字典以及`stopwords`停用詞字典
 ```
 scrapy_data_jieba.ipynb   #將愛評網食記斷詞後輸出至comment1229.txt中
 ```
 
-3.使用`gensim`的`word2vec`模型，訓練出一個模型
+3. 使用`gensim`的`word2vec`模型，訓練出一個模型
 ```
 word2vec.ipynb   #會訓練出一個name為med250.model.bin的模型
 ```
@@ -81,7 +83,7 @@ EX：「我這學期修了一門叫做知識探勘的課程」
 
 
 
-4.測試。
+4. 測試。
 
 由於 gensim 將整個模型讀了進來並作了一層映射，所以記憶體會消耗相當多，如果出現了MemoryError，可能得調整一下min_count或對常用詞作一層快取。
 
