@@ -26,22 +26,31 @@ pip3 install jieba
 pip3 install -U gensim
 ```
 
+###開發環境
+Windows8 Jupyter notebook
+
 ## 流程
 
 1.取得資料集，我這裡所採用的是愛評網的一部分食記內容(comment.txt)，若有其他需求，請自行爬蟲維基文章或任何大量文本資料來訓練
 
 2.因為`jieba`斷詞後的結果不一定符合我們的預期，所以可以建立`userdict`使用者自訂字典以及`stopwords`停用詞字典
+```
+scrapy_data_jieba.ipynb   #將愛評網食記斷詞後輸出至comment1229.txt中
+```
 
-3.使用`jieba`對文本斷詞，並去除停用詞
+3.使用`gensim`的`word2vec`模型，訓練出一個模型
 ```
-python3 segment.py
+word2vec.ipynb   #會訓練出一個name為med250.model.bin的模型
 ```
-4.使用`gensim`的`word2vec`模型，訓練出一個模型
-```
-python3 train.py
-```
-5.測試
-```
-python3 demo.py
-```
+###word2vec參數設定
+* sentences:當然了，這是要訓練的句子集，沒有他就不用跑了
+* size:這表示的是訓練出的詞向量會有幾維
+* alpha:機器學習中的學習率，這東西會逐漸收斂到 min_alpha
+* sg:這個不是三言兩語能說完的，sg=1表示採用skip-gram,sg=0 表示採用cbow
+* window:還記得孔乙己的例子嗎？往左往右看幾個字的意思，印象中原作者論文裡寫 cbow 採用 5 是不錯的選擇
+* workers:執行緒數目，除非電腦不錯，不然建議別超過 4
+* min_count:若這個詞出現的次數小於min_count，那他就不會被視為訓練對象
+
+4.測試
+
 "# gensim-word2vec" 
