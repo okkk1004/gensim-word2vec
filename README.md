@@ -19,7 +19,7 @@ pip3 install -U gensim
 
 2.使用`wiki_to_txt.py`從xml格式裡提取出維基文章
 
-```
+
 3.使用`jieba`對文本斷詞，並去除停用詞
 ```
 python3 segment.py
