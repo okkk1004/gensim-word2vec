@@ -15,10 +15,9 @@ pip3 install -U gensim
 
 ## 訓練流程
 
-1.取得資料集(https://dumps.wikimedia.org/zhwiki/20160820/zhwiki-20160820-pages-articles.xml.bz2)，本次實驗是採用 2016/8/20 的資料，若需更新的資料可以前往[維基百科:資料庫下載](https://zh.wikipedia.org/wiki/Wikipedia:%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8B%E8%BD%BD)下載
+1.取得資料集，我這裡所採用的是愛評網的一部分食記內容(comment.txt)，若有其他需求，請自行爬蟲維基文章或任何大量文本資料來訓練
 
-2.使用`wiki_to_txt.py`從xml格式裡提取出維基文章
-
+2.建立`userdict`使用者自訂字典以及`stopwords`停用詞字典
 
 3.使用`jieba`對文本斷詞，並去除停用詞
 ```
