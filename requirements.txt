@@ -1,0 +1,12 @@
+bundle==1.1.2
+gensim==0.13.3
+ipykernel==4.5.1
+ipython==5.1.0
+ipython-genutils==0.1.0
+ipywidgets==5.2.2
+jieba==0.38
+Jinja2==2.8
+jupyter==1.0.0
+jupyter-client==4.4.0
+jupyter-console==5.0.0
+jupyter-core==4.2.0
